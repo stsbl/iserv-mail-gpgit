@@ -1,0 +1,1 @@
+Debian-Exim        ALL = (gpgit) NOPASSWD: /usr/share/gpgit/gpgit.pl

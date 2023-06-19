@@ -1,0 +1,27 @@
+Source: stsbl-iserv-mail-gpgit
+Section: misc
+Priority: optional
+Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
+Homepage: https://it.stsbl.de/
+Build-Depends: debhelper-compat (= 13),
+  dh-sequence-iserv,
+  dh-sequence-stsbl,
+Standards-Version: 4.4.1
+Rules-Requires-Root: no
+
+Package: stsbl-iserv-mail-gpgit
+Architecture: all
+Depends: ${misc:Depends},
+  ${perl:Depends},
+  iserv-config-file,
+  iserv-mail,
+  iserv-mail-backend,
+  iserv-server-exim,
+  gpgit,
+Description: Verschlüsselung eingehender E-Mails für IServ
+ Erlaubt die Verschlüsselung eingehender E-Mails mit einem GPG-Schlüssel,
+ sofern diese nichts bereits verschlüsselt sind.
+ .
+ ACHTUNG: Das Lesen der E-Mails in der Weboberfläche ist damit nicht mehr
+ unmittelbar möglich.
+Tag: suite::iserv, suite::iserv:portal, role::plugin

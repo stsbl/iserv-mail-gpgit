@@ -1,0 +1,16 @@
+Test "user gpgit"
+  getent -s files passwd gpgit &> /dev/null
+  ---
+  adduser --system --group --disabled-password \
+    --home /var/lib/gpgit --no-create-home \
+    --shell /usr/sbin/nologin \
+    gpgit
+
+MkDir 0755 gpgit:gpgit /var/lib/gpgit
+
+Test "gpgit: create home"
+  [ -d "/var/lib/gpgit/.gnupg" ]
+  ---
+  # Creates home
+  su gpgit -s /bin/sh -l -c 'gpg --list-keys' &> /dev/null
+

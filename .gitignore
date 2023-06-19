@@ -1,0 +1,6 @@
+debian/stsbl-iserv-mail-gpgit/*
+debian/stsbl-iserv-mail-gpgit.substvars
+debian/stsbl-iserv-mail-gpgit.debhelper.log
+debian/files
+debian/debhelper-build-stamp
+debian/*.debhelper

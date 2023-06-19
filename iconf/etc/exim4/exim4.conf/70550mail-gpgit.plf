@@ -1,0 +1,26 @@
+#!/usr/bin/perl -CSDAL
+
+use warnings;
+use strict;
+
+my $transport_matched = 0;
+my $transport_section_matched = 0;
+my $applied = 0;
+
+while (<>)
+{
+  /^begin transports$/ and $transport_section_matched = 1;
+  if ($transport_section_matched)
+  {
+    /^  cyrus_ltcp:$/ and $transport_matched = 1;
+  }
+  if ($transport_section_matched and
+      $transport_matched and
+      not $applied and
+      /^    protocol = lmtp/
+  )
+  {
+    s{^    protocol = lmtp}{$&\n    # Call transport filter once per recipient\n    max_rcpt = 1\n    transport_filter = /usr/lib/iserv/mail-gpgit/autocrypt \$local_part} and $applied = 1;
+  }
+  print $_;
+}

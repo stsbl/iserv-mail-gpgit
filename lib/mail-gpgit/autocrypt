@@ -1,0 +1,13 @@
+#!/bin/bash
+set -eu
+
+. /usr/lib/iserv/cfg
+
+# Debug
+Domain="stsbl.de"
+
+Recipient="${1:-}"
+shift || { echo "Usage: $0 localpart [gpgit-arguments...]" >&2; exit 1; }
+[ "$Recipient" ] || { echo "Recipient empty!" >&2; exit 2; }
+
+sudo -H -u gpgit /usr/share/gpgit/gpgit.pl "$Recipient@$Domain" "$@"
