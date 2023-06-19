@@ -1,5 +1,5 @@
-stsbl-iserv-mail-gpgit (23.06.19-1) UNRELEASED; urgency=medium
+stsbl-iserv-mail-gpgit (23.06.19.1) stable; urgency=medium
 
   * Initial Release.
 
- -- Stadtteilschule Blankenese <repository@stsbl.de>  Mon, 19 Jun 2023 03:47:19 +0200
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Mon, 19 Jun 2023 05:48:06 +0200
