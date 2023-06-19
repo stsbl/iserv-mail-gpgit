@@ -1,3 +1,9 @@
+stsbl-iserv-mail-gpgit (23.06.19.2) stable; urgency=medium
+
+  * Ignore Makefile.iservmake
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Mon, 19 Jun 2023 05:51:08 +0200
+
 stsbl-iserv-mail-gpgit (23.06.19.1) stable; urgency=medium
 
   * Initial Release.
