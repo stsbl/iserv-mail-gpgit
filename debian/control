@@ -18,6 +18,7 @@ Depends: ${misc:Depends},
   iserv-mail-backend,
   iserv-server-exim,
   gpgit,
+  sudo,
 Description: Verschlüsselung eingehender E-Mails für IServ
  Erlaubt die Verschlüsselung eingehender E-Mails mit einem GPG-Schlüssel,
  sofern diese nichts bereits verschlüsselt sind.
