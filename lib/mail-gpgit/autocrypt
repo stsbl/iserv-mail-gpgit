@@ -4,7 +4,7 @@ set -eu
 . /usr/lib/iserv/cfg
 
 # Debug
-Domain="stsbl.de"
+#Domain="stsbl.de"
 
 Recipient="${1:-}"
 shift || { echo "Usage: $0 localpart [gpgit-arguments...]" >&2; exit 1; }
