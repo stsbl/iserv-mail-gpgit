@@ -1,6 +1,22 @@
 #!/bin/bash
 set -eu
 
+# Exim spawns this script in /var/spool/exim4, which breaks loading perl modules:
+# felix.iserv.dev ~/git/stsbl-iserv-send-mail-as-group (master) # su -l Debian-exim -s /bin/sh
+# $ sudo -H -u gpgit /usr/share/gpgit/gpgit.pl test.benutzer@stsbl.de
+# Compiled Mite file (/usr/share/perl5/Sub/HandlesVia/Toolkit/Moo.pm.mite.pm) for /usr/share/perl5/Sub/HandlesVia/Toolkit/Moo.pm is missing or an error occurred loading it: Can't locate Sub/HandlesVia/Toolkit.pm:   ./Sub/HandlesVia/Toolkit.pm: Keine Berechtigung at /usr/share/perl5/Sub/HandlesVia/Toolkit/Moo.pm.mite.pm line 34.
+# BEGIN failed--compilation aborted at /usr/share/perl5/Sub/HandlesVia/Toolkit/Moo.pm.mite.pm line 39.
+# Compilation failed in require at /usr/share/perl5/Sub/HandlesVia/Mite.pm line 116.
+#  at /usr/share/perl5/Sub/HandlesVia/Toolkit/Moo.pm line 10.
+# BEGIN failed--compilation aborted at /usr/share/perl5/Sub/HandlesVia/Toolkit/Moo.pm line 10.
+# Compilation failed in require at /usr/share/perl5/MooX/late.pm line 82.
+# BEGIN failed--compilation aborted at /usr/share/perl5/GnuPG/Interface.pm line 16.
+# Compilation failed in require at /usr/share/perl5/Mail/GnuPG.pm line 27.
+# BEGIN failed--compilation aborted at /usr/share/perl5/Mail/GnuPG.pm line 27.
+# Compilation failed in require at /usr/share/gpgit/gpgit.pl line 25.
+# BEGIN failed--compilation aborted at /usr/share/gpgit/gpgit.pl line 25.
+cd /
+
 . /usr/lib/iserv/cfg
 
 # Debug
